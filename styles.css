@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  background-color:hsl(231, 100%, 99%);
+}
+
+.container {
+  width: 100%;
+}
+
+.step-view {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 174px;
+  background-image: url('assets/images/bg-sidebar-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* step view */
+
+.step-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.step-view .circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  border: 1px solid hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 100%);
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.step-view .current {
+  background-color: hsl(206, 94%, 87%);
+  border: none;
+  color: hsl(243, 100%, 62%);
+}
+
+/* all steps */
+
+.step {
+  background-color: hsl(0, 0%, 100%);
+  margin: auto;
+  margin-top: -74px;
+  border-radius: 10px;
+  padding: 30px;
+  width: 90%;
+}
+
+.step h1 {
+  color: hsl(213, 96%, 18%);
+  font-weight: 700;
+  font-size: 24px;
+  height: 40px;
+}
+
+.step p {
+  color: hsl(231, 11%, 63%);
+  line-height: 140%;
+  margin-bottom: 25px;
+}
+
+/* step 1 */
+
+.step .get-string {
+  height: 70px;
+}
+
+.step h2 {
+  color: hsl(213, 96%, 18%);
+  font-weight: 400;
+  font-size: 14px;
+}
+
+#step-1 input {
+  border-radius: 3px;
+  border: 1px solid hsl(231, 11%, 63%);
+  height: 40px;
+  width: 100%;
+  padding-left: 15px;
+}
+
+#step-1 input:hover {
+  outline: 1px solid hsl(243, 100%, 62%);
+  cursor: pointer;
+}
+
+#step-1 input:focus {
+  outline-color: hsl(243, 100%, 62%);
+  cursor: pointer;
+}
+
+/* step 2 */
+
+.step .plan {
+  width: 100%;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 5px;
+  border: 1px solid hsl(231, 11%, 63%);
+  margin-bottom: 12px;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+}
+
+.step .plan img {
+  align-self: baseline;
+}
+
+.step .img-info {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.step .img-info .plan-name {
+  color: hsl(213, 96%, 18%);
+  font-weight: 500;
+}
+
+.step .img-info .plan-price {
+  margin-top: 5px;
+  color: hsl(231, 11%, 63%);
+  font-size: 14px;
+}
+
+.step .img-info .advantage{
+  margin-top: 5px;
+  color: hsl(243, 100%, 62%);
+  font-size: 14px;
+}
+
+.step .plan:hover {
+  outline: 1px solid hsl(243, 100%, 62%);
+}
+
+.step .select {
+  margin-top: 30px;
+  background-color: hsl(217, 100%, 97%);
+  border-radius: 5px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.step .select .monthly{
+  font-weight: 500;
+  color: hsl(213, 96%, 18%);
+}
+
+.step .select .yearly {
+  font-weight: 500;
+  color: hsl(231, 11%, 63%);
+}
+
+.step .switch {
+  position: relative;
+  width: 80px;
+  height: 20px;
+}
+
+.step .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.step .switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 10px;
+  background-color: hsl(213, 96%, 18%);
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 40px;
+}
+
+.step .switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.step .switch input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+.step .selected {
+  background-color: hsl(217, 100%, 97%);
+  outline: 1px solid hsl(243, 100%, 62%);
+}
+
+/* step 3 */
+
+.step .addon {
+  display: grid;
+  padding: 15px;
+  padding-right: 10px;
+  border: 1px solid hsl(231, 11%, 63%);
+  border-radius: 5px;
+  grid-template-columns: 30px 1fr 40px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.step .addon input[type=checkbox]{
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+}
+
+.step .addon .addon-name {
+  color: hsl(213, 96%, 18%);
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.step .addon .addon-discription {
+  color: hsl(231, 11%, 63%);
+  font-size: 14px;
+}
+
+.step .addon .addon-price {
+  font-size: 12px;
+  color: hsl(243, 100%, 62%);
+}
+
+.step .addon:hover {
+  outline: 1px solid hsl(213, 96%, 18%);
+}
+
+.step .checked {
+  background-color: hsl(217, 100%, 97%);
+  outline: 1px solid hsl(213, 96%, 18%);
+}
+
+/* step 4 */
+
+.step .finish {
+  background-color: hsl(217, 100%, 97%);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+}
+
+.step .plan-select {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  align-items: center;
+  border-bottom: 1px solid hsl(231, 11%, 63%);
+  padding-bottom: 15px;
+}
+
+.step .plan-select .plan-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.step .plan-select .plan-info .plan-name {
+  color: hsl(213, 96%, 18%);
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.step .plan-select .plan-info a {
+  color: hsl(231, 11%, 63%);
+}
+
+.step .plan-select .plan-info a:hover {
+  color: hsl(243, 100%, 62%);
+}
+
+.step .plan-select .plan-price {
+  color: hsl(213, 96%, 18%);
+  font-weight: 500;
+  justify-self: end;
+}
+
+.step .addon-select {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  margin-top: 15px;
+}
+
+.step .addon-select .addon-name {
+  color: hsl(231, 11%, 63%);
+  font-size: 15px;
+}
+
+.step .addon-select .addon-price {
+  justify-self: end;
+  color: hsl(213, 96%, 18%);
+  font-size: 15px;
+}
+
+.step .total {
+  margin-top: 10px;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  align-items: center;
+}
+
+.step .total .total-name {
+  color: hsl(231, 11%, 63%);
+  font-size: 15px;
+}
+
+.step .total .total-price {
+  justify-self: end;
+  color: hsl(243, 100%, 62%);
+  font-weight: 700;
+  font-size: 17px;
+}
+
+#step-end {
+  text-align: center;
+}
+
+.step .thankyou {
+  width: 60px;
+  height: 60px;
+  margin-top: 45px;
+  margin-bottom: 20px;
+}
+
+#step-end p {
+  margin-bottom: 45px;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 75px;
+  width: 100%;
+  background-color: hsl(0, 0%, 100%);
+}
+
+footer button {
+  width: 100px;
+  height: 40px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
+}
+
+#back {
+  background-color: inherit;
+  color: hsl(231, 11%, 63%);
+  position: fixed;
+  left: 0px;
+  bottom: 15px;
+}
+
+#back:hover{
+  color: hsl(213, 96%, 18%);
+  cursor: pointer;
+}
+
+#next {
+  background-color: hsl(213, 96%, 18%);
+  color: hsl(0, 0%, 100%);
+  position: fixed;
+  right: 20px;
+  bottom: 15px;
+}
+
+#next:hover {
+  background-color: hsl(213, 96%, 30%);
+  cursor: pointer;
+}
+
+#confirm {
+  background-color: hsl(243, 100%, 62%);
+  color: hsl(0, 0%, 100%);
+  position: fixed;
+  right: 20px;
+  bottom: 15px;
+}
+
+#confirm:hover {
+  background-color: hsl(228, 100%, 84%);
+  cursor: pointer;
+}

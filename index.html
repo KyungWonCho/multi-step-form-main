@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">  
+  <title>Frontend Mentor | Multi-step form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="step-view">
+      <div class="step-1">
+        <div class="circle current" id="circle-1">
+          1
+        </div>
+      </div>
+      <div class="step-2">
+        <div class="circle" id="circle-2">
+          2
+        </div>
+      </div>
+      <div class="step-3">
+        <div class="circle" id="circle-3">
+          3
+        </div>
+      </div>
+      <div class="step-4">
+        <div class="circle" id="circle-4">
+          4
+        </div>
+      </div>
+    </div>
+    <div class="step" id="step-1" style="display: block">
+      <h1>Personal info</h1>
+      <p>Please provide your name, email address, and phone number.</p>
+      <div class="get-string">
+        <h2>Name</h2>
+        <input type="text" placeholder="e.g. Stephen King" id="name">
+      </div>
+      <div class="get-string">
+        <h2>Email Address</h2>
+        <input type="email" placeholder="e.g. stephenking@lorem.com" id="email">
+      </div>
+      <div class="get-string">
+        <h2>Phone Number</h2>
+        <input type="tel" placeholder="e.g. +1 234 567 890" id="phone">
+      </div>
+    </div>
+
+    <div class="step" id="step-2" style="display: none">
+      <h1>Select your plan</h1>
+      <p>You have the option of monthly or yearly billing.</p>
+      <div class="plan" id="arcade">
+        <img src="assets/images/icon-arcade.svg">
+        <div class="img-info">
+          <div class="plan-name">Arcade</div>
+          <div class="plan-price month">$9/mo</div>
+          <div class="plan-price year">$90/yr</div>
+          <div class="advantage year">2 months free</div>
+        </div>
+      </div>
+      <div class="plan" id="advanced">
+        <img src="assets/images/icon-advanced.svg">
+        <div class="img-info">
+          <div class="plan-name">Advanced</div>
+          <div class="plan-price month">$12/mo</div>
+          <div class="plan-price year">$120/yr</div>
+          <div class="advantage year">2 months free</div>
+        </div>
+      </div>
+      <div class="plan" id="pro">
+        <img src="assets/images/icon-pro.svg">
+        <div class="img-info">
+          <div class="plan-name">Pro</div>
+          <div class="plan-price month">$15/mo</div>
+          <div class="plan-price year">$150/yr</div>
+          <div class="advantage year">2 months free</div>
+        </div>
+      </div>
+      <div class="select">
+        <div class="monthly">Monthly</div>
+        <label class="switch">
+          <input type="checkbox" id="slider">
+          <span class="slider"></span>
+        </label>
+        <div class="yearly">Yearly</div>
+      </div>
+    </div>
+
+    <div class="step" id="step-3" style="display: none">
+      <h1>Pick add-ons</h1>
+      <p>Add-ons help enhance your gaming experience.</p>
+      <div class="addon" id="online-service">
+        <input type="checkbox">
+        <div class="addon-info">
+          <div class="addon-name">Online service</div>
+          <div class="addon-discription">Access to multiplayer games</div>
+        </div>
+        <div class="addon-price month">+$1/mo</div>
+        <div class="addon-price year">+$10/yr</div>
+      </div>
+      <div class="addon" id="larger-storage">
+        <input type="checkbox">
+        <div class="addon-info">
+          <div class="addon-name">Larger storage</div>
+          <div class="addon-discription">Extra 1TB of cloud save</div>
+        </div>
+        <div class="addon-price month">+$2/mo</div>
+        <div class="addon-price year">+$20/yr</div>
+      </div>
+      <div class="addon" id="custom-profile">
+        <input type="checkbox">
+        <div class="addon-info">
+          <div class="addon-name">Customizable profile</div>
+          <div class="addon-discription">Custom theme on your profile</div>
+        </div>
+        <div class="addon-price month">+$2/mo</div>
+        <div class="addon-price year">+$20/yr</div>
+      </div>
+    </div>
+
+    <div class="step" id="step-4" style="display: none">
+      <h1>Finishing up</h1>
+      <p>Double-check everything looks OK before confirming.</p>
+      <div class="finish">
+        <div class="plan-select">
+          <div class="plan-info">
+            <div class="plan-name">
+              Arcade (Monthly)
+            </div>
+            <div class="change">
+              <a href="#">Change</a>
+            </div>
+          </div>
+          <div class="plan-price">
+            $9/mo
+          </div>
+        </div>
+      </div>
+      <div class="total">
+        <div class="total-name">
+          Total (per month)
+        </div>
+        <div class="total-price">
+          +$12/mo
+        </div>
+      </div>
+    </div>
+
+    <div class="step" id="step-end" style="display: none">
+      <img src="assets/images/icon-thank-you.svg" class="thankyou">
+      <h1>Thank you!</h1>
+      <p>Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com</p>
+      
+    </div>
+  </div>
+
+  <footer>
+    <button id="back" style="display: none">Go Back</button>
+    <button id="next">Next Step</button>
+    <button id="confirm" style="display: none">Confirm</button>
+  </footer>
+  <script src="scripts.js"></script>
+</body>
+</html>
