@@ -13,8 +13,28 @@ document.querySelector("#next").addEventListener("click", function(){
     nameInfo = document.querySelector("#name").value;
     emailInfo = document.querySelector("#email").value;
     phoneInfo = document.querySelector("#phone").value;
+    if(nameInfo==""){
+      document.querySelector("#name-alert").style.display = "block";
+      document.querySelector("#name").setAttribute("class", "req");
+    }
+    else {
+      document.querySelector("#name-alert").style.display = "none";
+    }
+    if(emailInfo==""){
+      document.querySelector("#email-alert").style.display = "block";
+      document.querySelector("#email").setAttribute("class", "req");
+    }
+    else{
+      document.querySelector("#email-alert").style.display = "none";
+    }
+    if(phoneInfo==""){
+      document.querySelector("#phone-alert").style.display = "block";
+      document.querySelector("#phone").setAttribute("class", "req");
+    }
+    else{
+      document.querySelector("#phone-alert").style.display = "none";
+    }
     if(nameInfo=="" || emailInfo=="" || phoneInfo == ""){
-      alert("Input Required");
       return;
     }
     document.querySelector("#back").style.display = "block";
@@ -25,9 +45,8 @@ document.querySelector("#next").addEventListener("click", function(){
     curStep = 2;
   }
   else if(curStep == 2){
-    // plan 안고를시 못넘어가게 해야함.
     if(plan == ""){
-      alert("Choose Plan");
+      document.querySelector(".plan-alert").style.display = "block";
       return;
     }
     document.querySelector("#circle-2").setAttribute("class", "circle");
@@ -89,6 +108,12 @@ let nameInfo = "";
 let emailInfo = "";
 let phoneInfo = "";
 
+document.querySelectorAll(".get-string input").forEach(function(data){
+  data.addEventListener("focus", function(){
+    this.setAttribute("class", "");
+  });
+});
+
 // step 2
 
 let monthly = true;
@@ -126,13 +151,13 @@ for(let i=0; i<yearElements.length; i++){
 let planDivArray = document.querySelectorAll(".plan");
 
 planDivArray.forEach(function(planDiv){
-  console.log(planDiv);
   planDiv.addEventListener("click", function(){
     if(plan!=""){
       document.querySelector("#"+plan).setAttribute("class", "plan");
     }
     plan = planDiv.getAttribute("id");
     planDiv.setAttribute("class", "plan selected");
+    document.querySelector(".plan-alert").style.display = "none";
   });
 });
 

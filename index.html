@@ -10,24 +10,40 @@
 <body>
   <div class="container">
     <div class="step-view">
-      <div class="step-1">
+      <div class="step-summary">
         <div class="circle current" id="circle-1">
           1
         </div>
+        <div class="step-info">
+          <div class="step-num">STEP 1</div>
+          <div class="step-name">YOUR INFO</div>
+        </div>
       </div>
-      <div class="step-2">
+      <div class="step-summary">
         <div class="circle" id="circle-2">
           2
         </div>
+        <div class="step-info">
+          <div class="step-num">STEP 2</div>
+          <div class="step-name">SELECT PLAN</div>
+        </div>
       </div>
-      <div class="step-3">
+      <div class="step-summary">
         <div class="circle" id="circle-3">
           3
         </div>
+        <div class="step-info">
+          <div class="step-num">STEP 3</div>
+          <div class="step-name">ADD-ONS</div>
+        </div>
       </div>
-      <div class="step-4">
+      <div class="step-summary">
         <div class="circle" id="circle-4">
           4
+        </div>
+        <div class="step-info">
+          <div class="step-num">STEP 4</div>
+          <div class="step-name">SUMMARY</div>
         </div>
       </div>
     </div>
@@ -35,15 +51,24 @@
       <h1>Personal info</h1>
       <p>Please provide your name, email address, and phone number.</p>
       <div class="get-string">
-        <h2>Name</h2>
+        <div class="headline">
+          <h2>Name</h2>
+          <p id="name-alert" style="display: none">This field is required</p>
+        </div>
         <input type="text" placeholder="e.g. Stephen King" id="name">
       </div>
       <div class="get-string">
-        <h2>Email Address</h2>
+        <div class="headline">
+          <h2>Email Address</h2>
+          <p id="email-alert" style="display: none">This field is required</p>
+        </div>
         <input type="email" placeholder="e.g. stephenking@lorem.com" id="email">
       </div>
       <div class="get-string">
-        <h2>Phone Number</h2>
+        <div class="headline">
+          <h2>Phone Number</h2>
+          <p id="phone-alert" style="display: none">This field is required</p>
+        </div>
         <input type="tel" placeholder="e.g. +1 234 567 890" id="phone">
       </div>
     </div>
@@ -51,32 +76,37 @@
     <div class="step" id="step-2" style="display: none">
       <h1>Select your plan</h1>
       <p>You have the option of monthly or yearly billing.</p>
-      <div class="plan" id="arcade">
-        <img src="assets/images/icon-arcade.svg">
-        <div class="img-info">
-          <div class="plan-name">Arcade</div>
-          <div class="plan-price month">$9/mo</div>
-          <div class="plan-price year">$90/yr</div>
-          <div class="advantage year">2 months free</div>
+      <div class="plans">
+        <div class="plan" id="arcade">
+          <img src="assets/images/icon-arcade.svg">
+          <div class="img-info">
+            <div class="plan-name">Arcade</div>
+            <div class="plan-price month">$9/mo</div>
+            <div class="plan-price year">$90/yr</div>
+            <div class="advantage year">2 months free</div>
+          </div>
+        </div>
+        <div class="plan" id="advanced">
+          <img src="assets/images/icon-advanced.svg">
+          <div class="img-info">
+            <div class="plan-name">Advanced</div>
+            <div class="plan-price month">$12/mo</div>
+            <div class="plan-price year">$120/yr</div>
+            <div class="advantage year">2 months free</div>
+          </div>
+        </div>
+        <div class="plan" id="pro">
+          <img src="assets/images/icon-pro.svg">
+          <div class="img-info">
+            <div class="plan-name">Pro</div>
+            <div class="plan-price month">$15/mo</div>
+            <div class="plan-price year">$150/yr</div>
+            <div class="advantage year">2 months free</div>
+          </div>
         </div>
       </div>
-      <div class="plan" id="advanced">
-        <img src="assets/images/icon-advanced.svg">
-        <div class="img-info">
-          <div class="plan-name">Advanced</div>
-          <div class="plan-price month">$12/mo</div>
-          <div class="plan-price year">$120/yr</div>
-          <div class="advantage year">2 months free</div>
-        </div>
-      </div>
-      <div class="plan" id="pro">
-        <img src="assets/images/icon-pro.svg">
-        <div class="img-info">
-          <div class="plan-name">Pro</div>
-          <div class="plan-price month">$15/mo</div>
-          <div class="plan-price year">$150/yr</div>
-          <div class="advantage year">2 months free</div>
-        </div>
+      <div class="plan-alert" style="display: none">
+        You should select plan!
       </div>
       <div class="select">
         <div class="monthly">Monthly</div>
@@ -161,6 +191,7 @@
     <button id="next">Next Step</button>
     <button id="confirm" style="display: none">Confirm</button>
   </footer>
+
   <script src="scripts.js"></script>
 </body>
 </html>
